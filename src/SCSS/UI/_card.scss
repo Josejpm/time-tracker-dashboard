@@ -1,0 +1,14 @@
+@use '../base/variables' as v;
+
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: v.$darkBlue;
+
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
