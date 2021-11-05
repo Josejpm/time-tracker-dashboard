@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React,{Fragment, useEffect, useState} from 'react';
-import Card from '../components/Card';
+import TimeCardsGrid from '../components/TimeCardsGrid';
 
 const Dashboard = () => {
 
@@ -10,7 +10,6 @@ const Dashboard = () => {
 
         const apiCall = async()=>{
             const resp = await axios.get('http://localhost:3004/registries');
-            console.log(data);
             setData(resp.data);
         }
 
@@ -18,17 +17,12 @@ const Dashboard = () => {
 
     },[]);
 
-    console.log(data);
     return ( 
         <Fragment>
             <h1>Dashboard</h1>
-            {data 
-                ? (data.map(item=>(
-                    <Card key={item.title} item={item} />
-                ))) 
-                : null
-            }
-            <Card data={data} />
+            <div className="cards-container">
+                <TimeCardsGrid data={data}  />
+            </div>
         </Fragment>
         
      );
