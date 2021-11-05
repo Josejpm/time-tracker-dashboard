@@ -1,0 +1,84 @@
+@use '../base/variables' as v;
+
+.user{
+    &__info{
+        position: relative;
+        z-index: 100;
+        background-color: v.$blue;
+        padding-left: 2.8rem;
+        padding-top: 3.2rem;
+        padding-bottom: 8.5rem;
+        width: 100%;
+        border-radius: 1.5rem;
+    }
+
+
+    &__image{
+        display: inline-block;
+        border: 0.3rem solid v.$white;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 3.8rem;
+       img{
+        width: 7.8rem;
+        display: block;
+       }
+    }
+
+    &__report{
+        font-size: 1.5rem;
+        color: v.$paleBlue;
+        line-height: 1;
+        margin-bottom: 0.7rem;
+        padding-left: 3px;
+
+    }
+
+    &__name{
+        font-size: 4rem;
+        font-weight: 300;
+        padding-left: 0.3rem;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+            span{
+                line-height: 1;
+                margin-top: 1rem;
+            }
+    }
+}
+
+.period-selection{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    gap: 1.9rem;
+    justify-content: space-between;
+
+    background-color: v.$darkBlue;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 1.5rem;
+    padding-top: 4.5rem;
+    margin-top: -1.8rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    p{
+        position: relative;
+        color: v.$desaturatedBlue;
+        display: inline-block;
+        z-index: 10;
+        padding-left: 1px;
+        
+        &:hover{
+            color: v.$white;
+            cursor: pointer;
+        }
+    }
+
+    .true{
+        color: v.$white;
+    }
+
+}

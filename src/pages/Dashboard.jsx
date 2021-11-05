@@ -1,30 +1,27 @@
 import axios from 'axios';
-import React,{Fragment, useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import TimeCardsGrid from '../components/TimeCardsGrid';
+import User from '../components/User';
 
 const Dashboard = () => {
 
-    const [data,setData] = useState([])
+    const [data,setData] = useState([]);
+    const [selection,setSelection]=useState('daily')
+
 
     useEffect(()=>{
-
         const apiCall = async()=>{
             const resp = await axios.get('http://localhost:3004/registries');
             setData(resp.data);
         }
-
         apiCall()
-
     },[]);
 
     return ( 
-        <Fragment>
-            <h1>Dashboard</h1>
-            <div className="cards-container">
-                <TimeCardsGrid data={data}  />
-            </div>
-        </Fragment>
-        
+        <div className="dashboard__grid">
+            <User selection={selection} setSelection={setSelection} />
+            <TimeCardsGrid data={data} selection={selection} />
+        </div>
      );
 }
  

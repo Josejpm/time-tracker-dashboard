@@ -7,7 +7,7 @@ import iconSocial from '../assets/img/icon-social.svg'
 import iconStudy from '../assets/img/icon-study.svg'
 import iconWork from '../assets/img/icon-work.svg'
 
-const Card = ({item}) => {
+const Card = ({item,selection}) => {
 
     const icon = ()=>{
         switch (item.title) {
@@ -27,9 +27,23 @@ const Card = ({item}) => {
                 return iconWork
         }
     }
+
+    const {current,previous} = item.timeframes[`${selection}`];
+
+    const legend =()=>{
+        switch (selection) {
+            case 'daily':
+                return 'Yesterday'
+            case 'weekly':
+                return 'Last Week'
+            case 'monthly':
+                return 'Last Month'
+            default:
+                return 'daily'
+        }
+    }
     
     return (
-        <a href="!#">
             <div className="card">
                 <div className={`card-header ${item.title.toLowerCase()}`}  >
                     <img className='card-header__image'  src={icon()} alt="header icon"/>
@@ -42,11 +56,10 @@ const Card = ({item}) => {
                             <img src={ellipsis} alt="ellipsis"/>
                         </div>
                     </div>
-                    <p className="card-body__time"> 32h </p>
-                    <p className="card-body__period"> Last Week - 5h </p>
+                    <p className="card-body__time"> {current}h </p>
+                    <p className="card-body__period"> {legend()} - {previous}h </p>
                 </div>
             </div>
-        </a>  
     );
 }
  

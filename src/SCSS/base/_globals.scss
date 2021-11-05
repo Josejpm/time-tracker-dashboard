@@ -16,11 +16,15 @@ body{
     color:v.$white;
 }
 
-p{
-    margin: 0;
+.container{
+    max-width: 90%;
+    width: fit-content;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-a{
-    text-decoration: none;
-    color: unset;
+p{
+    margin: 0;
 }

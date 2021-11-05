@@ -1,0 +1,7 @@
+.dashboard__grid{
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 25.4rem 82.5rem ;
+    gap: 3rem;
+}
