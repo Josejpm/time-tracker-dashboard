@@ -1,6 +1,29 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.cards-grid{
+
+    width: 90%;
+
+    @include m.tablet{
+        width: 80%;
+    }
+
+    @include m.desktop{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 3rem;
+        width: 100%;
+    }
+
+}
+
 
 .card{
+
+    width: 100%;
+
     &:hover{
         .card-body{
             background-color: v.$hoverBlue;
@@ -8,6 +31,7 @@
         cursor: pointer;
     }
 }
+
 
 .card-header{
     width: 100%;
@@ -90,12 +114,4 @@
         line-height: 1;
     }
 
-}
-
-.cards-grid{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 3rem;
-    row-gap: 3rem;
 }

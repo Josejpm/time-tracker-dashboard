@@ -28,8 +28,6 @@ const Card = ({item,selection}) => {
         }
     }
 
-    const {current,previous} = item.timeframes[`${selection}`];
-
     const legend =()=>{
         switch (selection) {
             case 'daily':
@@ -43,6 +41,8 @@ const Card = ({item,selection}) => {
         }
     }
     
+    const {current,previous} = item.timeframes[`${selection}`];
+                    
     return (
             <div className="card">
                 <div className={`card-header ${item.title.toLowerCase()}`}  >

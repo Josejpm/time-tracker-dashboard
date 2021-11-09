@@ -1,7 +1,13 @@
+@use '../base/mixins' as m;
+
 .dashboard__grid{
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 25.4rem 82.5rem ;
-    gap: 3rem;
+    width: 100%;
+
+    @include m.desktop{
+        display: grid;
+        grid-template-columns: 25.4rem 82.5rem ;
+        gap: 3rem;
+    }
 }
